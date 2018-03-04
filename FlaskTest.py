@@ -2,7 +2,7 @@ from flask import Flask, request  # request - объект запроса, вк�
 app = Flask(__name__)  # name - аргумент для определения пути к корневому каталогу
 
 
-@app.route('/user/<name>')
+@app.route('/user/<name>')  # выведет в http://localhost:5000/*
 def index(name):  # функция представления
     return '<h1>Hello, %s!</h1>' % name
 

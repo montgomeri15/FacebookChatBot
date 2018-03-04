@@ -10,14 +10,14 @@ VERIFY_TOKEN = 'YOUR_VERIFY_TOKEN'
 bot = Bot(ACCESS_TOKEN)
 
 
-@app.route('/', methods=['GET', 'POST'])  # Выведет в http://localhost:5000/. Получаем здесь соо от ФБ боту.
-def receive_message():
+@app.route('/', methods=['GET', 'POST'])
+def receive_message():  # получаем соо от ФБ боту.
 
-    # до того как позволить людям отправлять что-либо боту, Facebook проверяет маркер,
+    # до того, как позволить людям отправлять что-либо боту, Facebook проверяет маркер,
     # подтверждающий, что все запросы, получаемые ботом, приходят из Facebook:
 
     if request.method == 'GET':
-        token_sent = request.args["hub.verify_token"]
+        token_sent = request.args['hub.verify_token']
         return verify_fb_token(token_sent)
 
     else:  # если запрос не был GET, это был POST-запрос, и мы обрабатываем запрос пользователя
