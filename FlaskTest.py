@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request  # request - объект запроса, включающий содержимое HTTP-запроса от клиента
 app = Flask(__name__)  # name - аргумент для определения пути к корневому каталогу
 
 
